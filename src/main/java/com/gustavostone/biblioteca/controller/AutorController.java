@@ -21,7 +21,7 @@ public class AutorController {
     private final BuscarAutor service;
 
     @GetMapping
-    public ResponseEntity<List<Autor>> buscarEmpresas() throws Exception {
+    public ResponseEntity<List<Autor>> buscarTodos() throws Exception {
         List<Autor> autorList = service.buscarTodosAutores();
         return ResponseEntity.ok(autorList);
     }
