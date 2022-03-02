@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class AutorController {
     private final BuscarAutor service;
 
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:8080")
     public ResponseEntity<List<Autor>> buscarTodos() throws Exception {
         List<Autor> autorList = service.buscarTodosAutores();
         return ResponseEntity.ok(autorList);
